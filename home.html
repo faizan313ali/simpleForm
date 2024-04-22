@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Form</title>
+  <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+  <div class="regform">
+    <h1>Registration Form</h1>
+  </div>
+  <div class="main">
+    <form id="myForm">
+      <div class="name">
+        <h2>Name</h2>
+        <input class="firstname" type="text" name="firstName" placeholder="First Name">
+        <input class="lastname" type="text" name="lastName" placeholder="Last Name">
+      </div>
+
+      <div id="gender">
+        <h2>Gender</h2>
+        <input type="radio" name="gender" value="male" id="male">
+        <label for="male">Male</label>
+        <input type="radio" name="gender" value="female" id="female">
+        <label for="female">Female</label>
+      </div>
+
+      <div class="name">
+        <h2>Date of Birth</h2>
+        <input type="date" name="dob" id="dob" required>
+        <span class="input-placeholder">Select a date</span>
+      </div>
+
+      <h2>Company</h2>
+      <input class="company" type="text" name="company">
+
+      <h2>Email</h2>
+      <input class="email" type="email" name="email" required>
+
+      <h2>Password</h2>
+      <input class="password" type="password" name="password" required>
+
+      <h2>Phone</h2>
+      <input class="code" type="text" name="area_code" placeholder="Area Code">
+      <input class="number" type="text" name="phone" placeholder="Phone Number">
+
+      <h2>Nationality</h2>
+      <input type="text" name="nationality">
+
+      <h2>Main City</h2>
+      <select name="city">
+        <option value="Islamabad">Islamabad</option>
+        <option value="Lahore">Lahore</option>
+        <option value="Karachi">Karachi</option>
+        </select>
+
+      <br><br>
+      <h2>Description</h2>
+      <textarea class="description" name="description" rows="5" placeholder="Enter a brief description about yourself"></textarea>
+
+      <button type="reset">Reset</button>
+      <button type="button" class="submit" onclick="submitForm()">Register</button>
+    </form>
+  </div>
+
+  <script>
+    function submitForm() {
+      var form = document.getElementById('myForm');
+      var formData = new FormData(form);
+      for (var pair of formData.entries()) {
+        console.log(pair[0] + ': ' + pair[1]);
+      }
+    }
+  </script>
+</body>
+</html>
